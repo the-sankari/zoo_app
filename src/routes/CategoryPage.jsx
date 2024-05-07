@@ -8,22 +8,20 @@ function CategoryPage({ removeCard, removeLike, addLike, ...rest }) {
 
   return (
     <>
-      <div className="container">
-        <h2 className="cat-name">{category}</h2>
-        <div className="card-container g-5 row">
-          {categoryItems.map((item) => {
-            return (
-              <Cards
-                key={item.name}
-                name={item.name}
-                removeCard={() => removeCard(item.name, category)}
-                removeLike={() => removeLike(item.name, category, "remove")}
-                addLike={() => addLike(item.name, category, "add")}
-                likes={item.likes}
-              />
-            );
-          })}
-        </div>
+      <h2 className="cat-name">{category}</h2>
+      <div className="card-container">
+        {categoryItems.map((item) => {
+          return (
+            <Cards
+              key={item.name}
+              name={item.name}
+              removeCard={() => removeCard(item.name, category)}
+              removeLike={() => removeLike(item.name, category, "remove")}
+              addLike={() => addLike(item.name, category, "add")}
+              likes={item.likes}
+            />
+          );
+        })}
       </div>
     </>
   );
