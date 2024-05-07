@@ -1,14 +1,18 @@
 /* eslint-disable react/prop-types */
 function Cards({ name, likes, addLikes, removeLike, removeCard }) {
   return (
-    <div className="card">
+    <div className="card col-2">
       <button
         type="button"
         onClick={removeCard}
         className="btn-close"
         aria-label="Close"
       ></button>
-      <img src="..." className="card-img-top" alt="..." />
+      <img
+        src={`https://source.unsplash.com/400x400?${name}`}
+        alt="..."
+        className="card-img-top"
+      />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <p className="card-text">

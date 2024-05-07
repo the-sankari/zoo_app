@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -22,29 +22,29 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item ">
-                <Link className="nav-link active" to="/">
+                <NavLink className="nav-link active" to="/">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/animals">
+                <NavLink className="nav-link" to="/animals">
                   Animals
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/birds">
+                <NavLink className="nav-link" to="/birds">
                   Birds
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/insects">
+                <NavLink className="nav-link" to="/insects">
                   Insects
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/fishes">
+                <NavLink className="nav-link" to="/fishes">
                   Fishes
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <form className="d-flex" role="search">

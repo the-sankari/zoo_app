@@ -1,20 +1,32 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Contact from "./routes/Contact";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { animals, birds, fishes, insects } from "./animalList";
 import Home from "./routes/Home";
-import About from "./routes/About";
+import Root from "./routes/Root";
+import ErrorPage from "./routes/ErrorPage";
+import { useState } from "react";
+import CategoryPage from "./routes/CategoryPage";
 
 function App() {
-  return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+  const [zoo, setZoo] = useState({ animals, birds, insects, fishes });
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: ":category",
+          element: <CategoryPage {...zoo} />,
+        },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
