@@ -5,9 +5,27 @@ import Root from "./routes/Root";
 import ErrorPage from "./routes/ErrorPage";
 import { useState } from "react";
 import CategoryPage from "./routes/CategoryPage";
+import SinglePage from "./routes/SinglePage";
 
 function App() {
   const [zoo, setZoo] = useState({ animals, birds, insects, fishes });
+
+  const likesHandler = (name, category, action) => {
+    setZoo((prevZoo) => ({
+      ...prevZoo,
+      [category]: prevZoo[category].map((el) =>
+        el.name === name
+          ? { ...el, likes: el.likes + (action === "add" ? 1 : -1) }
+          : el
+      ),
+    }));
+  };
+  const removeHandler = (name, category) => {
+    setZoo((prevZoo) => ({
+      ...prevZoo,
+      [category]: prevZoo[category].filter((el) => el.name !== name),
+    }));
+  };
 
   const router = createBrowserRouter([
     {
@@ -21,8 +39,16 @@ function App() {
       children: [
         {
           path: ":category",
-          element: <CategoryPage {...zoo} />,
+          element: (
+            <CategoryPage
+              addLikes={likesHandler}
+              removeLike={likesHandler}
+              removeCard={removeHandler}
+              {...zoo}
+            />
+          ),
         },
+        { path: "/:category/:name", element: <SinglePage {...zoo} /> },
       ],
     },
   ]);

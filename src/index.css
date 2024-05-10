@@ -1,4 +1,4 @@
-.card {
+.card-box {
   width: 18rem;
 }
 .home-page {
@@ -45,7 +45,6 @@ body {
   grid-template-rows: auto;
   gap: 1rem;
   padding: 20px;
-  margin-top: 70px;
   background-color: #f2f2f2; /* Add a background color */
   border: 1px solid #ccc; /* Add a border */
   border-radius: 5px; /* Add a border radius */
@@ -76,6 +75,7 @@ body {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   color: purple;
+  cursor: pointer;
 }
 .btn-close {
   background-color: #fefefe;
@@ -102,4 +102,8 @@ body {
 
 h3 {
   color: #333;
+}
+
+.header {
+  margin-bottom: 70px;
 }

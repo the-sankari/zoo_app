@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 function Cards({ name, likes, addLikes, removeLike, removeCard }) {
   return (
-    <div className="card col-2">
+    <div className="card  card-box col-2">
       <button
         type="button"
         onClick={removeCard}
@@ -15,10 +16,6 @@ function Cards({ name, likes, addLikes, removeLike, removeCard }) {
       />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the cards content.
-        </p>
       </div>
       <div className="card-header text-center text-body-secondary">
         <div className="d-flex justify-content-between">
@@ -35,9 +32,9 @@ function Cards({ name, likes, addLikes, removeLike, removeCard }) {
         </div>
       </div>
       <div className="card-footer text-center text-body-secondary">
-        <a href="#" className="btn btn-dark">
-          See More
-        </a>
+        <Link className="btn btn-dark" to={name}>
+          See more
+        </Link>
       </div>
     </div>
   );

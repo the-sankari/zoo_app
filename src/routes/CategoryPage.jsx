@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom";
 import Cards from "../components/Cards";
 
-function CategoryPage({ removeCard, removeLike, addLike, ...rest }) {
+function CategoryPage({ removeCard, removeLike, addLikes, ...rest }) {
   const { category } = useParams();
   const categoryItems = rest[category];
 
@@ -17,7 +17,7 @@ function CategoryPage({ removeCard, removeLike, addLike, ...rest }) {
               name={item.name}
               removeCard={() => removeCard(item.name, category)}
               removeLike={() => removeLike(item.name, category, "remove")}
-              addLike={() => addLike(item.name, category, "add")}
+              addLikes={() => addLikes(item.name, category, "add")}
               likes={item.likes}
             />
           );

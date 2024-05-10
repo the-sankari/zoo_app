@@ -2,13 +2,14 @@ import { NavLink, Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark">
+    <header className="header">
+      <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             Zoo App
           </Link>
           <button
+        
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -58,7 +59,7 @@ function Header() {
           </div>
         </div>
       </nav>
-    </div>
+    </header>
   );
 }
 
