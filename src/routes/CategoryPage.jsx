@@ -2,13 +2,28 @@
 import { useParams } from "react-router-dom";
 import Cards from "../components/Cards";
 
-function CategoryPage({ removeCard, removeLike, addLikes, ...rest }) {
+function CategoryPage({
+  removeCard,
+  removeLike,
+  addLikes,
+  searchTerm,
+  handleSerach,
+  ...rest
+}) {
   const { category } = useParams();
   const categoryItems = rest[category];
 
   return (
     <>
-      <h2 className="cat-name">{category}</h2>
+      <h2 className="cat-name ">{category}</h2>
+      <input
+        type="search"
+        name="searc"
+        value={searchTerm}
+        onChange={(e)=>handleSerach(category,e)}
+        id=""
+        placeholder="search ..."
+      />
       <div className="card-container">
         {categoryItems.map((item) => {
           return (

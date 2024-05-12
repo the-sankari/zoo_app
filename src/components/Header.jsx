@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { NavLink, Link } from "react-router-dom";
 
 function Header() {
@@ -54,6 +55,7 @@ function Header() {
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+               
               ></input>
             </form>
           </div>

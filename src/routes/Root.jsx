@@ -1,17 +1,18 @@
-import { Outlet } from "react-router-dom"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+/* eslint-disable react/prop-types */
+import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function Root() {
   return (
     <>
       <Header/>
       <main className="container">
-        <Outlet/>
+        <Outlet />
       </main>
-      <Footer/>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default Root
+export default Root;

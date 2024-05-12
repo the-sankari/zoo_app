@@ -11,7 +11,6 @@
 }
 
 .home-thumb {
-  background-color: aqua;
   border: 1px solid;
   a {
     display: block;
@@ -45,7 +44,7 @@ body {
   grid-template-rows: auto;
   gap: 1rem;
   padding: 20px;
-  background-color: #f2f2f2; /* Add a background color */
+  background-color: #121212; /* Add a background color */
   border: 1px solid #ccc; /* Add a border */
   border-radius: 5px; /* Add a border radius */
 }
@@ -66,7 +65,7 @@ body {
 
 /* Add styles for the cards */
 .card-container > div {
-  background-color: #fff;
+  background-color: #1a1919;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
