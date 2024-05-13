@@ -6,8 +6,7 @@ function CategoryPage({
   removeCard,
   removeLike,
   addLikes,
-  searchTerm,
-  handleSerach,
+
   ...rest
 }) {
   const { category } = useParams();
@@ -16,15 +15,8 @@ function CategoryPage({
   return (
     <>
       <h2 className="cat-name ">{category}</h2>
-      <input
-        type="search"
-        name="searc"
-        value={searchTerm}
-        onChange={(e)=>handleSerach(category,e)}
-        id=""
-        placeholder="search ..."
-      />
-      <div className="card-container">
+
+      <div className="card-container row gap-3">
         {categoryItems.map((item) => {
           return (
             <Cards

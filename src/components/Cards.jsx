@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 function Cards({ name, likes, addLikes, removeLike, removeCard }) {
   return (
-    <div className="card  card-box col-2">
+    <div className="card  card-box col-4">
       <button
         type="button"
         onClick={removeCard}
