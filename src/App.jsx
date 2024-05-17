@@ -20,7 +20,7 @@ function App() {
         el.name.toLowerCase().includes(searchTerm)
       ),
     }));
-    setSearchTerm(searchTerm);
+    // setSearchTerm(searchTerm);
   };
 
   const likesHandler = (name, category, action) => {
@@ -58,7 +58,7 @@ function App() {
               removeLike={likesHandler}
               removeCard={removeHandler}
               searchTerm={searchTerm}
-              handleSerach={handleSearch}
+              handleSerach={handleSearch( )}
               {...zoo}
             />
           ),
